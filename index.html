@@ -36,8 +36,10 @@ h1,h2,h3{
   justify-content:center;
   align-items:center;
   text-align:center;
-  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)); /* solo degradado inicial */
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)); 
   color:#fff;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Fondo solo para PC */
@@ -117,8 +119,8 @@ h1,h2,h3{
   padding:22px;
   border-radius:16px;
   transition:all .35s ease;
-  opacity:0;
-  transform:translateY(30px);
+  opacity:1; /* cambiar a 1 para que siempre se vea */
+  transform:translateY(0);
   border:1px solid rgba(0,0,0,0.05);
 }
 
@@ -238,45 +240,4 @@ footer{
 
     <div class="card">
       <div class="card-row"><span>Focaccia</span><strong>$250</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Focaccia">Pedir</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="section white">
-  <div class="container">
-    <h2>Especiales</h2>
-    <div class="grid grid-3">
-
-      <div class="card">
-        <p>Pre pizzas napoletanas</p>
-        <strong>$160</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pre%20Pizza%20Napoletana">Pedir</a>
-      </div>
-
-      <div class="card">
-        <p>Cookies</p>
-        <strong>$90</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Cookies">Pedir</a>
-      </div>
-
-      <div class="card">
-        <p>Medialunas</p>
-        <strong>$70</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Medialunas">Pedir</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section" style="text-align:center">
-  <h2>Pedidos</h2>
-  <p>WhatsApp: 099 075 881</p>
-  <p>Instagram: @pan_decalle</p>
-  <br>
-  <a class="btn" href="https://wa.me/59899075881" target="_blank">Ir a WhatsApp</a>
-</section>
-
-<a href="https://wa.me/59899075881" class="float" target
+      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Focaccia">Pedir</
