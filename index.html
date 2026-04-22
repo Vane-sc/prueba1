@@ -17,9 +17,9 @@ body {
   line-height:1.6;
 }
 
-h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
+h1,h2,h3{ font-weight:600; letter-spacing:-0.5px; }
 
-.container { max-width:1100px; margin:auto; padding:20px; }
+.container{ max-width:1100px; margin:auto; padding:20px; }
 
 /* HERO */
 .hero{
@@ -29,32 +29,35 @@ h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
   justify-content:center;
   align-items:center;
   text-align:center;
-  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.5));
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5));
   color:#fff;
+  position:relative;
 }
 
+/* Fondo solo para PC */
 @media (min-width: 769px) {
-  .hero { 
-    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.5)), url('123.jpg') center/cover no-repeat;
+  .hero {
+    background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.5)), url('123.jpg') center/cover no-repeat;
   }
 }
 
+/* Logo */
 .hero-logo {
   width: 250px;
-  height:auto;
-  margin-bottom:20px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
-  .hero-logo { width: 60%; max-width:150px; }
-  .hero h1 { font-size:36px; }
-  .hero p { font-size:16px; }
+  .hero-logo { width: 60%; max-width: 150px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; }
 }
 
 @media (max-width: 480px) {
-  .hero-logo { width:80%; max-width:120px; }
-  .hero h1 { font-size:28px; }
-  .hero p { font-size:14px; }
+  .hero-logo { width: 80%; max-width: 120px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 14px; }
 }
 
 .hero h1{ font-size:56px; margin-bottom:10px; }
@@ -70,7 +73,8 @@ h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
   font-weight:600;
   transition:all .3s ease;
 }
-.btn:hover { background:#b5892f; transform:translateY(-2px); }
+
+.btn:hover{ background:#b5892f; transform:translateY(-2px); }
 
 /* BRAND */
 .brand{ padding:100px 20px; text-align:center; }
@@ -87,14 +91,17 @@ h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
   padding:22px;
   border-radius:16px;
   transition:all .35s ease;
-  opacity:0;
-  transform:translateY(30px);
+  opacity:1; /* cambiamos para que siempre sean visibles */
+  transform:translateY(0); /* quitar animación inicial */
   border:1px solid rgba(0,0,0,0.05);
 }
-.card.show{ opacity:1; transform:translateY(0); }
-.card:hover{ transform:translateY(-6px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
 
-.card-row{ display:flex; justify-content:space-between; margin-bottom:12px; font-size:17px; }
+.card-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+  font-size:17px;
+}
 
 /* BOTÓN PRODUCTO */
 .product-btn{
@@ -108,6 +115,7 @@ h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
   transition:.3s;
   display:inline-block;
 }
+
 .product-btn:hover{ background:#c89b3c; color:#fff; }
 
 /* SECTION */
@@ -131,11 +139,11 @@ h1,h2,h3 { font-weight:600; letter-spacing:-0.5px; }
   text-decoration:none;
   transition:.3s;
 }
+
 .float:hover{ transform:scale(1.1); }
 
 /* FOOTER */
 footer{ text-align:center; padding:30px; color:#777; font-size:14px; }
-
 </style>
 </head>
 
@@ -156,26 +164,11 @@ footer{ text-align:center; padding:30px; color:#777; font-size:14px; }
 <section class="section container">
   <h2>Nuestros Panes</h2>
   <div class="grid grid-2">
-    <div class="card">
-      <div class="card-row"><span>Pan Tortuga</span><strong>$25</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20Tortuga">Pedir</a>
-    </div>
-    <div class="card">
-      <div class="card-row"><span>Pan Catalán</span><strong>$25</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20Catalan">Pedir</a>
-    </div>
-    <div class="card">
-      <div class="card-row"><span>Molde Lactal</span><strong>$190</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Molde%20Lactal">Pedir</a>
-    </div>
-    <div class="card">
-      <div class="card-row"><span>Pan de Campo</span><strong>$190</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20de%20Campo">Pedir</a>
-    </div>
-    <div class="card">
-      <div class="card-row"><span>Focaccia</span><strong>$250</strong></div>
-      <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Focaccia">Pedir</a>
-    </div>
+    <div class="card"><div class="card-row"><span>Pan Tortuga</span><strong>$25</strong></div><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20Tortuga">Pedir</a></div>
+    <div class="card"><div class="card-row"><span>Pan Catalán</span><strong>$25</strong></div><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20Catalan">Pedir</a></div>
+    <div class="card"><div class="card-row"><span>Molde Lactal</span><strong>$190</strong></div><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Molde%20Lactal">Pedir</a></div>
+    <div class="card"><div class="card-row"><span>Pan de Campo</span><strong>$190</strong></div><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pan%20de%20Campo">Pedir</a></div>
+    <div class="card"><div class="card-row"><span>Focaccia</span><strong>$250</strong></div><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Focaccia">Pedir</a></div>
   </div>
 </section>
 
@@ -183,21 +176,9 @@ footer{ text-align:center; padding:30px; color:#777; font-size:14px; }
   <div class="container">
     <h2>Especiales</h2>
     <div class="grid grid-3">
-      <div class="card">
-        <p>Pre pizzas napoletanas</p>
-        <strong>$160</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pre%20Pizza%20Napoletana">Pedir</a>
-      </div>
-      <div class="card">
-        <p>Cookies</p>
-        <strong>$90</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Cookies">Pedir</a>
-      </div>
-      <div class="card">
-        <p>Medialunas</p>
-        <strong>$70</strong><br>
-        <a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Medialunas">Pedir</a>
-      </div>
+      <div class="card"><p>Pre pizzas napoletanas</p><strong>$160</strong><br><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Pre%20Pizza%20Napoletana">Pedir</a></div>
+      <div class="card"><p>Cookies</p><strong>$90</strong><br><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Cookies">Pedir</a></div>
+      <div class="card"><p>Medialunas</p><strong>$70</strong><br><a class="product-btn" href="https://wa.me/59899075881?text=Quiero%20Medialunas">Pedir</a></div>
     </div>
   </div>
 </section>
@@ -207,18 +188,3 @@ footer{ text-align:center; padding:30px; color:#777; font-size:14px; }
   <p>WhatsApp: 099 075 881</p>
   <p>Instagram: @pan_decalle</p>
   <br>
-  <a class="btn" href="https://wa.me/59899075881" target="_blank">Ir a WhatsApp</a>
-</section>
-
-<a href="https://wa.me/59899075881" class="float" target="_blank">💬</a>
-
-<footer>
-  © 2026 Pan de Calle
-</footer>
-
-<script>
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.class
