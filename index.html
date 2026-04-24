@@ -1,249 +1,319 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pan de Calle</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pan de Calle</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f6f2ea;
-      color: #2b2b2b;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f6f2ea;
+  color:#2b2b2b;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
-        url('hero.jpg') center/cover no-repeat;
-    }
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('hero.jpg') center/cover no-repeat;
+}
 
-    .hero-logo {
-      width: 180px;
-      margin-bottom: 20px;
-    }
+/* LOGO INSTANTÁNEO + PULSO PREMIUM */
+.hero-logo{
+  width:180px;
+  margin-bottom:20px;
+  transform-origin:center;
+  animation:pulsoPremium 3.8s ease-in-out infinite;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+@keyframes pulsoPremium{
+  0%,100%{
+    transform:scale(1);
+    filter:drop-shadow(0 0 0 rgba(255,255,255,0));
+  }
 
-    .btn {
-      padding: 12px 24px;
-      border-radius: 30px;
-      background: #c89b3c;
-      color: #fff;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
+  50%{
+    transform:scale(1.03);
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.20));
+  }
+}
 
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-    }
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
 
-    .white {
-      background: #fff;
-    }
+.btn{
+  padding:12px 24px;
+  border-radius:30px;
+  background:#c89b3c;
+  color:#fff;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:10px;
+  transition:.3s;
+}
 
-    .grid {
-      display: grid;
-      gap: 20px;
-      margin-top: 40px;
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    .grid-4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
+.white{
+  background:#fff;
+}
 
-    @media (max-width: 900px) {
-      .grid-4, .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+.grid{
+  display:grid;
+  gap:20px;
+  margin-top:40px;
+}
 
-    .card {
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      transition: 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
+@media(max-width:900px){
+  .grid-4,.grid-3{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 
-    .card-row {
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  transition:.35s;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
 
-    .price {
-      margin-bottom: 15px;
-      color: #444;
-      font-size: 14px;
-    }
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 14px 28px rgba(0,0,0,.12);
+}
 
-    .card .btn {
-      margin-top: auto;
-    }
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:10px;
+  transition:.35s;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-    }
-  </style>
+.card:hover img{
+  transform:scale(1.03);
+}
+
+.card-row{
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.price{
+  margin-bottom:15px;
+  color:#444;
+  font-size:14px;
+}
+
+.card .btn{
+  margin-top:auto;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
+
+/* PAN DE CAMPO DOBLE FOTO */
+.doble-img .galeria-producto{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.doble-img .galeria-producto img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* BADGE DESTACADO */
+.badge{
+  display:inline-block;
+  background:#f3ead0;
+  color:#7a5a12;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+/* COOKIE GRANDE */
+.cookie-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.cookie-card{
+  max-width:380px;
+  width:100%;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="123.jpg" class="hero-logo" alt="Pan de Calle">
-    <h1>Pan de Calle</h1>
-    <p>Pan artesanal de masa madre, horneado en Punta Negra.</p>
-    <a class="btn" href="https://wa.me/59899075881">Hacer pedido</a>
-  </section>
+<section class="hero">
+  <img src="123.jpg" class="hero-logo" alt="Pan de Calle">
+  <h1>Pan de Calle</h1>
+  <p>Pan artesanal de masa madre, horneado en Punta Negra.</p>
+  <a class="btn" href="https://wa.me/59899075881">Hacer pedido</a>
+</section>
 
-  <!-- PRESENTACIÓN -->
-  <section class="section">
-    <h2>Nuestra esencia</h2>
-    <p>En Pan de Calle horneamos pan rústico, bollería, medialunas y panes artesanales.</p>
-  </section>
+<section class="section">
+  <h2>Nuestra esencia</h2>
+  <h2>En Pan de Calle horneamos pan rústico, bollería, medialunas y panes artesanales.</h2>
+<h2>¿Quiénes somos?.</h2>
+<h2>Vane y Leo, panaderos desde 2017, surgidos en Irlanda haciendo pan acá (Punta Negra).</h2>
+</section>
 
-  <!-- PRODUCTOS -->
-  <section class="section container">
-    <h2>Nuestros Panes</h2>
+<section class="section container">
+<h2>Nuestros Panes</h2>
 
-    <div class="grid grid-4">
+<div class="grid grid-4">
 
-      <div class="card">
-        <img src="images/pan-tortuga.jpg">
-        <div class="card-row">Pan Tortuga</div>
-        <div class="price"><strong>$250</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/pan-tortuga.jpg">
+<div class="card-row">Pan Tortuga</div>
+<div class="price"><strong>12 x $300</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/pan-catalan.jpg">
-        <div class="card-row">Pan Catalán</div>
-        <div class="price"><strong>$270</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/campomolde.jpg">
+<div class="card-row">Campo molde masa madre</div>
+<div class="price"><strong>$190</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/molde-lactal.jpg">
-        <div class="card-row">Molde Lactal</div>
-        <div class="price"><strong>$300</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/pan-catalan.jpg">
+<div class="card-row">Pan Catalán</div>
+<div class="price"><strong>12 x $300</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/pan-de-campo.jpg">
-        <div class="card-row">Pan de Campo</div>
-        <div class="price"><strong>$320</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/molde-lactal.jpg">
+<div class="card-row">Molde Lactal</div>
+<div class="price"><strong>$190</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/focaccia.jpg">
-        <div class="card-row">Focaccia</div>
-        <div class="price"><strong>$350</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card doble-img">
+<div class="galeria-producto">
+<img src="images/pandecampo.jpg" alt="Pan de Campo">
+<img src="images/pandecampo2.jpg" alt="Pan de Campo corte">
+</div>
+<div class="badge">Destacado</div>
+<div class="card-row">Pan de Campo</div>
+<div class="price"><strong>$190</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/bagel.jpg">
-        <div class="card-row">Bagel</div>
-        <div class="price"><strong>$180</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/focaccia.jpg">
+<div class="card-row">Focaccia (romero y cebolla, tomates cherry, aceitunas negras)</div>
+<div class="price"><strong>$250</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <!-- AHORA MEDIALUNAS Y PRE-PIZZA PASAN A PRODUCTOS -->
-      <div class="card">
-        <img src="images/medialunas.jpg">
-        <div class="card-row">Medialunas</div>
-        <div class="price"><strong>$12 x $850</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/bagel.jpg">
+<div class="card-row">Bagel</div>
+<div class="price"><strong>12 x $360</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-      <div class="card">
-        <img src="images/pre-pizza.jpg">
-        <div class="card-row">Pre pizza</div>
-        <div class="price"><strong>$280</strong></div>
-        <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-      </div>
+<div class="card">
+<img src="images/medialunas.jpg">
+<div class="card-row">Medialunas</div>
+<div class="price"><strong>12 x $850</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-    </div>
-  </section>
+<div class="card">
+<img src="images/pre-pizza.jpg">
+<div class="card-row">Pre pizza</div>
+<div class="price"><strong>$170</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
 
-  <!-- ESPECIALES (SOLO COOKIES) -->
-  <section class="section white">
-    <div class="container">
-      <h2>Especiales (Solo Sábados)</h2>
+</div>
+</section>
 
-      <div class="grid grid-3">
+<section class="section white">
+<div class="container">
+<h2>Especiales (Solo Sábados)</h2>
 
-        <div class="card">
-          <img src="images/cookies.jpg">
-          <div class="card-row">Cookies</div>
-          <div class="price"><strong>$90</strong></div>
-          <a class="btn" href="https://wa.me/59899075881">Pedir</a>
-        </div>
+<div class="cookie-wrap">
+<div class="card cookie-card">
+<img src="images/cookies.jpg">
+<div class="card-row">Cookies</div>
+<div class="price"><strong>$90</strong></div>
+<a class="btn" href="https://wa.me/59899075881">Pedir</a>
+</div>
+</div>
 
-      </div>
-    </div>
-  </section>
+</div>
+</section>
 
-  <!-- CONTACTO -->
-  <section class="section">
-    <h2>Pedidos</h2>
-    <p>WhatsApp: 099 075 881</p>
-    <p>Instagram: @pan_decalle</p>
-    <br>
-    <a class="btn" href="https://wa.me/59899075881">Ir a WhatsApp</a>
-  </section>
+<section class="section">
+<h2>Pedidos</h2>
+<p>WhatsApp: 099 075 881</p>
+<p>Instagram: @pan_decalle</p>
+<a class="btn" href="https://wa.me/59899075881">Ir a WhatsApp</a>
+</section>
 
-  <footer>© 2026 Pan de Calle</footer>
+<footer>© 2026 Pan de Calle</footer>
 
 </body>
 </html>
